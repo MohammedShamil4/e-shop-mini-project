@@ -3,7 +3,7 @@
   $uid=$_SESSION['uid'];
   include('db.php');
 
-  
+ 
 
     if(isset($_POST['submit']))
     {
@@ -102,9 +102,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
 
-                  <li class="text-center user-image-back">
-               <img src="assets/img/profile-img.jpg"  class="img-responsive"/>
-                    </li>
+                  
 <br>
       <li class="nav-item">
         <a class="nav-link " href="index.php">

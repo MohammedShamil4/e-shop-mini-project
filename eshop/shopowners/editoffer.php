@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
   
 
 		if(!isset($img) || empty($img))
-		$query = " UPDATE offers SET oid = '$oid', prd_name = '$prd_name',  prd_quantity = '$prd_quantity',  prd_unitprice = '$prd_unitprice',  prd_netamt= '$prd_netamt',  startingdate = '$startingdate', endingdate ='$endingdate' , description ='$description' ,  WHERE oid = '$oid' "; 
+		$query = " UPDATE offers SET oid = '$oid', prd_name = '$prd_name',  prd_quantity = '$prd_quantity',  prd_unitprice = '$prd_unitprice',  prd_netamt= '$prd_netamt',  startingdate = '$startingdate', endingdate ='$endingdate' , description ='$description'   WHERE oid = '$oid' "; 
 else
 	$query = " UPDATE offers SET oid = '$oid', prd_name = '$prd_name',  prd_quantity = '$prd_quantity',  prd_unitprice = '$prd_unitprice',  prd_netamt= '$prd_netamt',  startingdate = '$startingdate', endingdate ='$endingdate' , description ='$description' , img='$img'  WHERE oid = '$oid' ";
 	

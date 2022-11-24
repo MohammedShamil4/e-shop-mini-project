@@ -126,7 +126,7 @@ if (!$con)
   die('Could not connect: ' . mysql_error());
   }
 mysql_select_db("my_shop", $con);
-$result = mysql_query("SELECT * FROM shop");
+$result = mysql_query("SELECT * FROM shop where shop_id=$uid");
 while($row = mysql_fetch_array($result))
   {
                      echo '  
