@@ -5,8 +5,7 @@
     {
         
         $name=$_POST['name'];
-        $gender=$_POST['gender'];
-        $dob=$_POST['dob'];
+        
         $address=$_POST['address'];
         $phone_number1=$_POST['phone_number1'];
         $email=$_POST['email'];
@@ -45,7 +44,7 @@
 
         $sql="INSERT INTO `login` (`username`, `password`) VALUES ('$username', '$password')";
         $result=$conn->query($sql);
-        $sql="INSERT INTO `shop_owner` (`uid`,`name`,`gender`, `dob`,`address`,`phone_number`,`email`) VALUES (LAST_INSERT_ID(),'$name', '$gender','$dob','$address','$phone_number1','$email')";
+        $sql="INSERT INTO `shop_owner` (`uid`,`name`,`address`,`phone_number`,`email`) VALUES (LAST_INSERT_ID(),'$name','$address','$phone_number1','$email')";
         $result=$conn->query($sql);
         $sql="INSERT INTO `shop` (`shop_id`,`shop_name`, `place`,`phone_number`,`shop_regno`,`image`) VALUES (LAST_INSERT_ID(),'$shop_name', '$place','$phone_number2','$shop_regno', '$file_name')";
         $result=$conn->query($sql);
@@ -181,26 +180,13 @@
                               </tr>
                               
                               <tr>
-                                <th scope="col">GENDER</th>
-                                <th scope="col"><input type="radio" name="gender" value="male" required>male &nbsp;
-                                  
-                                <input type="radio" name="gender" value="female">female
-                              </th>
-                              </tr>
-                              
-                              <tr>
-                                <th scope="col">DATE OF BIRTH</th>
-                                <th scope="col"><input type="date" class="form-control" name="dob" required></th>
-                              </tr>
-
-                              <tr>
                                 <th scope="col">ADDRESS</th>
                                 <th scope="col"><input type="text" class="form-control" name="address" required></th>
                               </tr>
 
                               <tr>
                                 <th scope="col">PHONE NUMBER</th>
-                                <th scope="col"><input type="text" class="form-control" name="phone_number1" required></th>
+                                <th scope="col"><input type="number" class="form-control" name="phone_number1"  minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /required></th>
                               </tr>
 
                               <tr>
@@ -244,7 +230,7 @@
 
                               <tr>
                                 <th scope="col"> SHOP PHONE NUMBER</th>
-                                <th scope="col"><input type="text" class="form-control" name="phone_number2" required></th>
+                                <th scope="col"><input type="text" class="form-control" name="phone_number2" minlength="10" maxlength="10"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / required></th>
                               </tr>
 
 
